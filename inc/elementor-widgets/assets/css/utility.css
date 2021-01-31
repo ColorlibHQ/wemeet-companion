@@ -1,0 +1,39 @@
+/* -------------------------
+:: utility Class
+---------------------------- */
+.wemeet-pt-100 {
+    padding-top: 100px;
+}
+.wemeet-pt-80 {
+    padding-top: 80px;
+}
+.wemeet-pt-70 {
+    padding-top: 70px;
+}
+.wemeet-pt-60 {
+    padding-top: 60px;
+}
+.wemeet-pt-50 {
+    padding-top: 50px;
+}
+.wemeet-pt-30 {
+    padding-top: 30px;
+}
+.wemeet-pb-100 {
+    padding-bottom: 100px;
+}
+.wemeet-pb-80 {
+    padding-bottom: 80px;
+}
+.wemeet-pb-70 {
+    padding-bottom: 70px;
+}
+.wemeet-pb-60 {
+    padding-bottom: 60px;
+}
+.wemeet-pb-50 {
+    padding-bottom: 50px;
+}
+.wemeet-pb-30 {
+    padding-bottom: 30px;
+}
