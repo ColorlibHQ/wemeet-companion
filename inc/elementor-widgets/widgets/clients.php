@@ -116,47 +116,6 @@ class Wemeet_Client_Contents extends Widget_Base {
         );
         $this->end_controls_section(); // End Hero content
 
-        /**
-         * Style Tab
-         * ------------------------------ Style Title ------------------------------
-         *
-         */
-        $this->start_controls_section(
-            'style_title', [
-                'label' => __( 'Style Client Section', 'wemeet-companion' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'rev_txt_col', [
-                'label' => __( 'Review Text Color', 'wemeet-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .testmonial_area .testmonial_info p' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'rev_name_col', [
-                'label' => __( 'Reviewer Name Color', 'wemeet-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .testmonial_area .testmonial_info .author_name h4' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'rev_desig_col', [
-                'label' => __( 'Reviewer Designation Color', 'wemeet-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .testmonial_area .testmonial_info .author_name span' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->end_controls_section();
-
 	}
 
 	protected function render() {

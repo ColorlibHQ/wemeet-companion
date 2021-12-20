@@ -398,10 +398,6 @@ if ( !class_exists( 'Wemeet_El_Widgets' ) ) {
             require_once WEMEET_COMPANION_EW_DIR_PATH . 'widgets/book-section.php';
             require_once WEMEET_COMPANION_EW_DIR_PATH . 'widgets/clients.php';
             require_once WEMEET_COMPANION_EW_DIR_PATH . 'widgets/faq-section.php';
-            // require_once WEMEET_COMPANION_EW_DIR_PATH . 'widgets/services.php';
-            // require_once WEMEET_COMPANION_EW_DIR_PATH . 'widgets/projects.php';
-            // require_once WEMEET_COMPANION_EW_DIR_PATH . 'widgets/review-section.php';
-            // require_once WEMEET_COMPANION_EW_DIR_PATH . 'widgets/home-contact.php';
             require_once WEMEET_COMPANION_EW_DIR_PATH . 'widgets/contact.php';
         }
 
@@ -427,10 +423,6 @@ if ( !class_exists( 'Wemeet_El_Widgets' ) ) {
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Wemeetelementor\Widgets\Wemeet_Book_Section() ); 
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Wemeetelementor\Widgets\Wemeet_Client_Contents() ); 
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Wemeetelementor\Widgets\Wemeet_Faq_Section() ); 
-            // \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Wemeetelementor\Widgets\Wemeet_Services() ); 
-            // \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Wemeetelementor\Widgets\Wemeet_Projects() ); 
-            // \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Wemeetelementor\Widgets\Wemeet_Review_Contents() ); 
-            // \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Wemeetelementor\Widgets\Wemeet_Home_Contact() ); 
             \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Wemeetelementor\Widgets\Wemeet_Contact() ); 
         }
 

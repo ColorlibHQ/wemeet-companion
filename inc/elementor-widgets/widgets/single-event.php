@@ -34,7 +34,7 @@ class Wemeet_Single_Event extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-settings';
+		return 'eicon-info-box';
 	}
 
 	public function get_categories() {

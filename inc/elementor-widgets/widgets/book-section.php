@@ -105,50 +105,30 @@ class Wemeet_Book_Section extends Widget_Base {
         );
 
         $this->add_control(
-			'sec_title_col', [
-				'label' => __( 'Big Title Color', 'wemeet-companion' ),
+			'title_col', [
+				'label' => __( 'Title Color', 'wemeet-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .home_contact h2' => 'color: {{VALUE}};',
-				],
-			]
-        );
-
-        $this->add_control(
-			'sub_title_col', [
-				'label' => __( 'Sub title Color', 'wemeet-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .home_contact p' => 'color: {{VALUE}};',
-				],
-			]
-        );
-
-        $this->add_control(
-			'btn_bg_col', [
-				'label' => __( 'Button BG Color', 'wemeet-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .home_contact .btn_1' => 'background: {{VALUE}};',
-				],
-			]
-        );
-
-        $this->add_control(
-			'btn_hov_bg_col', [
-				'label' => __( 'Button Hover Bg Color', 'wemeet-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .home_contact .btn_1:hover' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .resister_book .resister_text h3' => 'color: {{VALUE}};',
 				],
 			]
         );
         $this->add_control(
-			'bg_overlay_col', [
-				'label' => __( 'Bg Overlay Color', 'wemeet-companion' ),
+			'btn_bt_col', [
+				'label' => __( 'Button Border & Text Color', 'wemeet-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .home_contact:after' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .resister_book .resister_text .boxed-btn-white' => 'color: {{VALUE}} !important; border-color: {{VALUE}}',
+					'{{WRAPPER}} .resister_book .resister_text .boxed-btn-white:hover' => 'background: {{VALUE}}',
+				],
+			]
+        );
+        $this->add_control(
+			'btn_bt_hov_col', [
+				'label' => __( 'Button Hover Color', 'wemeet-companion' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .resister_book .resister_text .boxed-btn-white:hover' => 'color: {{VALUE}} !important;',
 				],
 			]
         );

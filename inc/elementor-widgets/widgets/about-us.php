@@ -152,114 +152,53 @@ class Wemeet_About_Us extends Widget_Base {
         );
 
         $this->add_control(
-            'left_sec_styles_seperator',
-            [
-                'label' => esc_html__( 'Left Section Styles', 'wemeet-companion' ),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'after'
-            ]
-        );
-        $this->add_control(
-			'exp_val_col', [
-				'label' => __( 'Experience Value Color', 'wemeet-companion' ),
+			'sub_title_col', [
+				'label' => __( 'Sub Title Color', 'wemeet-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .about_area .about_thumb .exprience h1' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .about_area .section_title .sub_heading' => 'color: {{VALUE}};',
 				],
 			]
         );
 
         $this->add_control(
-			'exp_txt_col', [
-				'label' => __( 'Experience Text Color', 'wemeet-companion' ),
+			'title_col', [
+				'label' => __( 'Title Color', 'wemeet-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .about_area .about_thumb .exprience span' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .about_area .section_title h3' => 'color: {{VALUE}};',
 				],
 			]
         );
 
         $this->add_control(
-            'right_sec_styles_seperator',
-            [
-                'label' => esc_html__( 'Right Section Styles', 'wemeet-companion' ),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'after'
-            ]
-        );
-        $this->add_control(
-            'sub_title_col', [
-                'label' => __( 'Sub Title Color', 'wemeet-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .about_info .section_title .sub_heading' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'sec_title_col', [
-                'label' => __( 'Sec Title Color', 'wemeet-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .about_info .section_title h3' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .about_info .section_title .seperator' => 'background: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'sec_text_col', [
-                'label' => __( 'Sec Text Color', 'wemeet-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .about_area .about_info p' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .about_area .about_info ul li' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'list_circle_col', [
-                'label' => __( 'List Item Circle Color', 'wemeet-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .about_area .about_info ul li::before' => 'background: {{VALUE}};',
-                ],
-            ]
+			'text_col', [
+				'label' => __( 'Text Color', 'wemeet-companion' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .about_area .about_info p' => 'color: {{VALUE}};',
+				],
+			]
         );
 
         $this->add_control(
-            'btn_styles_seperator',
-            [
-                'label' => esc_html__( 'Button Styles', 'wemeet-companion' ),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'after'
-            ]
+			'btn_col', [
+				'label' => __( 'Button Color', 'wemeet-companion' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .about_area .about_info .boxed-btn-red' => 'color: {{VALUE}} !important; border-color: {{VALUE}}',
+				],
+			]
         );
+
         $this->add_control(
-            'btn_txt_col', [
-                'label' => __( 'Button Text & Border Color', 'wemeet-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .about_area .about_info a' => 'color: {{VALUE}} !important; border-color: {{VALUE}}',
-                ],
-            ]
-        );
-        $this->add_control(
-            'btn_hvr_bg_col', [
-                'label' => __( 'Button Hover Bg & Border Color', 'wemeet-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .about_area .about_info a:hover' => 'background: {{VALUE}}; border-color: {{VALUE}}',
-                ],
-            ]
-        );
-        $this->add_control(
-            'btn_hvr_txt_col', [
-                'label' => __( 'Button Hover Text Color', 'wemeet-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .about_area .about_info a:hover' => 'color: {{VALUE}} !important;',
-                ],
-            ]
+			'btn_hov_col', [
+				'label' => __( 'Button Hover Color', 'wemeet-companion' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .about_area .about_info .boxed-btn-red:hover' => 'border-color: {{VALUE}}; background: {{VALUE}}; color: #fff !important;',
+				],
+			]
         );
 
         $this->end_controls_section();

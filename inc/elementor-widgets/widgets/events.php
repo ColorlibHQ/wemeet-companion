@@ -34,7 +34,7 @@ class Wemeet_Events extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-settings';
+		return 'eicon-gallery-justified';
 	}
 
 	public function get_categories() {
@@ -105,47 +105,56 @@ class Wemeet_Events extends Widget_Base {
             ]
         );
         $this->add_control(
-            'sub_title_col', [
-                'label' => __( 'Sub Title Color', 'wemeet-companion' ),
+            'border_col', [
+                'label' => __( 'Fat Border Color', 'wemeet-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .team_area .section_title .sub_heading' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .event_area .double_line::before, .event_area .double_line::after' => 'background: {{VALUE}};',
                 ],
             ]
         );
         $this->add_control(
-            'big_title_col', [
-                'label' => __( 'Big Title Color', 'wemeet-companion' ),
+            'event_date_col', [
+                'label' => __( 'Event Date Color', 'wemeet-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .team_area .section_title h3' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'member_styles_seperator',
-            [
-                'label' => esc_html__( 'Member Styles', 'wemeet-companion' ),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'after'
-            ]
-        );
-        $this->add_control(
-            'member_name_col', [
-                'label' => __( 'Member Name Color', 'wemeet-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .team_area .single_team h3' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .event_area .date h3' => 'color: {{VALUE}};',
                 ],
             ]
         );
         $this->add_control(
-            'member_desig_color', [
-                'label' => __( 'Member Designation Color', 'wemeet-companion' ),
+            'sec_title_col', [
+                'label' => __( 'Section Title Color', 'wemeet-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .team_area .single_team p' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .event_area .vr_text' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'speaker_name_col', [
+                'label' => __( 'Title Color', 'wemeet-companion' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .event_area .single_speaker .speaker-name .heading span' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'speaker_text_col', [
+                'label' => __( 'Text Color', 'wemeet-companion' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .event_area .single_speaker p' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'speaker_time_col', [
+                'label' => __( 'Time Color', 'wemeet-companion' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .event_area .single_speaker .speaker-name .heading .time' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -157,10 +166,11 @@ class Wemeet_Events extends Widget_Base {
     $settings  = $this->get_settings();
     $sec_title = !empty( $settings['sec_title'] ) ? $settings['sec_title'] : '';
     $events    = !empty( $settings['events'] ) ? $settings['events'] : '';
+    $dynamic_class = is_front_page() ? 'event_area' : 'event_area plus_padding';
     ?>
 
     <!-- event_area_start -->
-    <div class="event_area">
+    <div class="<?php echo esc_attr( $dynamic_class )?>">
         <?php 
             if ( $sec_title ) { 
                 echo '<h1 class="vr_text d-none d-lg-block">'.esc_html( $sec_title ).'</h1>';

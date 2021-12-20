@@ -133,20 +133,20 @@ class Wemeet_Hero extends Widget_Base {
 			]
 		);
 		$this->add_control(
-			'big_title_col', [
-				'label' => __( 'Big Title Color', 'wemeet-companion' ),
+			'title_col', [
+				'label' => __( 'Title Color', 'wemeet-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .slider_area .single_slider .slider_text h3' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .slider_area .title_text h3' => 'color: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_control(
-			'sub_title_col', [
-				'label' => __( 'Sub Title Color', 'wemeet-companion' ),
+			'right_shade_txt_col', [
+				'label' => __( 'Right Shade Text Color', 'wemeet-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .slider_area .single_slider .slider_text p' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .slider_area .opcity_text' => 'color: {{VALUE}};',
 				],
 			]
         );
@@ -155,25 +155,17 @@ class Wemeet_Hero extends Widget_Base {
 				'label' => __( 'Button Border & Text Color', 'wemeet-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .slider_area .single_slider .slider_text .boxed-btn2' => 'color: {{VALUE}};border-color: {{VALUE}};',
+					'{{WRAPPER}} .slider_area .boxed-btn-white' => 'color: {{VALUE}} !important;border-color: {{VALUE}};',
+					'{{WRAPPER}} .slider_area .boxed-btn-white:hover' => 'background: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_control(
 			'btn_bg_hov_col', [
-				'label' => __( 'Button Hover Bg & Border Color', 'wemeet-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .slider_area .single_slider .slider_text .boxed-btn2:hover' => 'background: {{VALUE}};border-color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'btn_bg_hov_txt_col', [
 				'label' => __( 'Button Hover Text Color', 'wemeet-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .slider_area .single_slider .slider_text .boxed-btn2:hover' => 'color: {{VALUE}} !important;',
+					'{{WRAPPER}} .slider_area .boxed-btn-white:hover' => 'color: {{VALUE}} !important;',
 				],
 			]
 		);

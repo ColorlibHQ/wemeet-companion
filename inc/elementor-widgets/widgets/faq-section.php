@@ -34,7 +34,7 @@ class Wemeet_Faq_Section extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-settings';
+		return 'eicon-alert';
 	}
 
 	public function get_categories() {
@@ -134,7 +134,16 @@ class Wemeet_Faq_Section extends Widget_Base {
                 'label' => __( 'Section Title Color', 'wemeet-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .faq_area .accordion_heading h3' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .faq_area .serction_title_large h3' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'sec_title_border_col', [
+                'label' => __( 'Section Title Border Color', 'wemeet-companion' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .faq_area .serction_title_large h3::before' => 'background: {{VALUE}};',
                 ],
             ]
         );
@@ -148,15 +157,6 @@ class Wemeet_Faq_Section extends Widget_Base {
             ]
         );
         $this->add_control(
-            'item_icon_col', [
-                'label' => __( 'Item Icon Color', 'wemeet-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .faq_area #accordion .card h5 button i' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
             'item_title_col', [
                 'label' => __( 'Item Title Color', 'wemeet-companion' ),
                 'type' => Controls_Manager::COLOR,
@@ -166,11 +166,11 @@ class Wemeet_Faq_Section extends Widget_Base {
             ]
         );
         $this->add_control(
-            'item_text_col', [
-                'label' => __( 'Item Text Color', 'wemeet-companion' ),
+            'item_border_col', [
+                'label' => __( 'Item Border Color', 'wemeet-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .faq_area #accordion .card .card-body' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .faq_area #accordion .card' => 'border-color: {{VALUE}};',
                 ],
             ]
         );

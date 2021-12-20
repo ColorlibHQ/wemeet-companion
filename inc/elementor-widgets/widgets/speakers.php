@@ -34,7 +34,7 @@ class Wemeet_Speakers extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-settings';
+		return 'eicon-posts-ticker';
 	}
 
 	public function get_categories() {
@@ -194,53 +194,89 @@ class Wemeet_Speakers extends Widget_Base {
      */
 
         $this->start_controls_section(
-            'style_room_section', [
-                'label' => __( 'Style Service Section', 'wemeet-companion' ),
+            'style_speaker_section', [
+                'label' => __( 'Style Speaker Section', 'wemeet-companion' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
-            'sub_title_col', [
-                'label' => __( 'Sub Title Color', 'wemeet-companion' ),
+            'title_col', [
+                'label' => __( 'Title Color', 'wemeet-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .team_area .section_title .sub_heading' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .speakers_area .serction_title_large h3' => 'color: {{VALUE}};',
                 ],
             ]
         );
         $this->add_control(
-            'big_title_col', [
-                'label' => __( 'Big Title Color', 'wemeet-companion' ),
+            'section_title_border_col', [
+                'label' => __( 'Section Title Border Color', 'wemeet-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .team_area .section_title h3' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .speakers_area .serction_title_large h3::before' => 'background: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'shade_title_col', [
+                'label' => __( 'Shade Title Color', 'wemeet-companion' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .speakers_area .horizontal_text' => 'color: {{VALUE}};',
                 ],
             ]
         );
 
         $this->add_control(
-            'member_styles_seperator',
+            'inner_styles_seperator',
             [
-                'label' => esc_html__( 'Member Styles', 'wemeet-companion' ),
+                'label' => esc_html__( 'Inner Styles', 'wemeet-companion' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'after'
             ]
         );
         $this->add_control(
-            'member_name_col', [
-                'label' => __( 'Member Name Color', 'wemeet-companion' ),
+            'speaker_name_color', [
+                'label' => __( 'Speaker Name Color', 'wemeet-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .team_area .single_team h3' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .speakers_area .single_speaker .speaker_name h3' => 'color: {{VALUE}};',
                 ],
             ]
         );
         $this->add_control(
-            'member_desig_color', [
-                'label' => __( 'Member Designation Color', 'wemeet-companion' ),
+            'speaker_desig_color', [
+                'label' => __( 'Speaker Designation Color', 'wemeet-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .team_area .single_team p' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .speakers_area .single_speaker .speaker_name p' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'hover_overlay_col', [
+                'label' => __( 'On hover overlay Color', 'wemeet-companion' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .speakers_area .single_speaker .speaker_thumb .hover_overlay' => 'background: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'social_icon_col', [
+                'label' => __( 'Social Icon Color', 'wemeet-companion' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .speakers_area .single_speaker .speaker_thumb .hover_overlay .social_icon a' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'social_icon_hover_col', [
+                'label' => __( 'Social Icon Hover Color', 'wemeet-companion' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .speakers_area .single_speaker .speaker_thumb .hover_overlay .social_icon a:hover' => 'background: {{VALUE}};',
                 ],
             ]
         );
